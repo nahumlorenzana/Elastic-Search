@@ -15,17 +15,17 @@ La información es valiosa para realizar análisis de sentimientos, minería de 
 Diccionario de Datos
 A continuación se describen las columnas (campos) presentes en el dataset y su mapeo en Elasticsearch:
 
-**| Campo (CSV) |** Tipo de Dato (Elasticsearch) | Descripción |
-**| `Id` | `integer` / `keyword` |** Identificador único de la fila en el dataset original. |**
-**| `ProductId` | `keyword` | Identificador único del producto en Amazon (ASIN). |**
-**| `UserId` | `keyword` | Identificador único del usuario que hace la reseña. |**
-**| `ProfileName` | `text` | Nombre de perfil del usuario. |**
-**| `HelpfulnessNumerator` | `integer` | Número de usuarios que encontraron la reseña útil. |**
-**| `HelpfulnessDenominator` | `integer` | Número total de usuarios que votaron si la reseña era útil o no. |**
-**| `Score` | `integer` / `short` | Calificación del producto (de 1 a 5 estrellas). |**
-**| `Time` | `date` (epoch_millis) | Fecha y hora de la reseña (formato timestamp UNIX).** |
-**| `Summary` | `text` | Resumen breve o título de la reseña. |**
-**| `Text` | `text` | Cuerpo completo de la reseña (texto no estructurado). |**
+| Campo (CSV) | Tipo de Dato (Elasticsearch) | Descripción |  
+| `Id` | `integer` / `keyword` |** Identificador único de la fila en el dataset original. |  
+| `ProductId` | `keyword` | Identificador único del producto en Amazon (ASIN). |  
+| `UserId` | `keyword` | Identificador único del usuario que hace la reseña. |  
+| `ProfileName` | `text` | Nombre de perfil del usuario. |  
+| `HelpfulnessNumerator` | `integer` | Número de usuarios que encontraron la reseña útil. |  
+| `HelpfulnessDenominator` | `integer` | Número total de usuarios que votaron si la reseña era útil o no. |  
+| `Score` | `integer` / `short` | Calificación del producto (de 1 a 5 estrellas). |  
+| `Time` | `date` (epoch_millis) | Fecha y hora de la reseña (formato timestamp UNIX).|  
+| `Summary` | `text` | Resumen breve o título de la reseña. |  
+| `Text` | `text` | Cuerpo completo de la reseña (texto no estructurado). |  
 
 ## Modelado del Dataset (Base de Datos Documental).
 **Tipo de NoSQL:** Documental (Document Store).
@@ -43,11 +43,11 @@ Cada fila del archivo CSV original se ha transformado en un único objeto JSON (
 
 ## Herramientas utilizadas.
 
-Kaggle: Plataforma utilizada para descargar el archivo original del dataset.
-ElasticSearch: Motor de búsqueda y análisis de datos donde se almacenan y consultan los datos.
-Python: Herramienta utilizada para la importacion del dataset a ElasticSearch.
-VS Code: Herramienta para instalación de extensiones de comprobación.
-Postman Extension: Extensión utilizada en VS Code para verificar que el archivo del dataset se haya importado correctamente.
+**Kaggle:** Plataforma utilizada para descargar el archivo original del dataset.  
+**ElasticSearch:** Motor de búsqueda y análisis de datos donde se almacenan y consultan los datos.  
+**Python:** Herramienta utilizada para la importacion del dataset a ElasticSearch.  
+**VS Code:** Herramienta para instalación de extensiones de comprobación.  
+**Postman Extension:** Extensión utilizada en VS Code para verificar que el archivo del dataset se haya importado correctamente.
 
 ## Descripcion de proceso de importacion 
 
