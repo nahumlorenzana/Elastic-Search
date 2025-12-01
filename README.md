@@ -51,9 +51,9 @@ Cada fila del archivo CSV original se ha transformado en un único objeto JSON (
 
 ## Descripcion de proceso de importacion 
 
-Para poder importar el dataset a ElasticSearch se necesito de un proceso largo, se instalo el paquete comprimido de ElasticSearch para Windows que se encuentra en el siguiente link:[InternetShortcut](https://www.elastic.co/downloads/elasticsearch), al descomprimir, se ejercutó en la terminal de PowerShell de Windows utilizando ejecutando la siguiente sentencia:(bin\elasticsearch.bat).
+Para poder importar el dataset a ElasticSearch se necesito de un proceso largo, se instalo el paquete comprimido de ElasticSearch para Windows que se encuentra en el siguiente link: [InternetShortcut](https://www.elastic.co/downloads/elasticsearch), al descomprimir, se ejercutó en la terminal de PowerShell de Windows utilizando ejecutando la siguiente sentencia:(bin\elasticsearch.bat).
 
-En python se utilizó un codigo para poder pasar todo el dataset a ElasticSearch [importar.py](https://github.com/user-attachments/files/23866958/importar.py). Posteriormente se verifico en el navegador utilizando: [InternetShortcut](http://localhost:9200/amazon_reviews).
+En python se utilizó un codigo para poder pasar todo el dataset a ElasticSearch  [importar.py](https://github.com/user-attachments/files/23866958/importar.py). Posteriormente se verifico en el navegador utilizando:  [InternetShortcut](http://localhost:9200/amazon_reviews).
 
 ## Ejemplo.
 **Ejemplo de un documento en Elasticsearch:**
