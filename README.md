@@ -15,8 +15,8 @@ La información es valiosa para realizar análisis de sentimientos, minería de 
 Diccionario de Datos
 A continuación se describen las columnas (campos) presentes en el dataset y su mapeo en Elasticsearch:
 
-**| Campo (CSV) | Tipo de Dato (Elasticsearch) | Descripción |**
-**| `Id` | `integer` / `keyword` | Identificador único de la fila en el dataset original. |**
+**| Campo (CSV) |** Tipo de Dato (Elasticsearch) | Descripción |
+**| `Id` | `integer` / `keyword` |** Identificador único de la fila en el dataset original. |**
 **| `ProductId` | `keyword` | Identificador único del producto en Amazon (ASIN). |**
 **| `UserId` | `keyword` | Identificador único del usuario que hace la reseña. |**
 **| `ProfileName` | `text` | Nombre de perfil del usuario. |**
