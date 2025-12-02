@@ -73,3 +73,18 @@ En python se utilizó un codigo para poder pasar todo el dataset a ElasticSearch
     "Text": "I have bought several of the Vitality canned dog food products and have found them all to be of good quality..."
   }
 }
+
+
+# Ejemplos de sentencias CRUD (Create, Read, Update, Delete)
+**Crear un documento con ID específico**
+
+##Create (Insertar documentos)
+
+```json
+PUT /productos/_doc/1
+{
+  "nombre": "Café Latte",
+  "precio": 50
+}
+
+Crea un documento nuevo en el índice productos con ID = 1.
