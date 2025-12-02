@@ -73,3 +73,5 @@ En python se utilizó un codigo para poder pasar todo el dataset a ElasticSearch
     "Text": "I have bought several of the Vitality canned dog food products and have found them all to be of good quality..."
   }
 }
+
+## operaciones CRUD (Create, Read, Update, Delete) 
