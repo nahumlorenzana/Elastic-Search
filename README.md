@@ -238,3 +238,53 @@ PUT /productos/_doc/1
 }
 ```
 # DELETE – Eliminar documentos
+
+**1. Eliminar un documento por ID**
+
+Descripción: Borra el documento con ID = 1.
+```json
+DELETE /productos/_doc/1
+```
+**2.Eliminar un indice completo**
+
+Descripción: Elimina el índice productos y todo su contenido.
+```json
+DELETE /productos
+```
+
+**3.Eliminar documentos por consulta**
+
+Descripción: Borra todos los documentos que contengan café.
+
+POST /productos/_delete_by_query
+```json
+{
+  "query": {
+    "match": { "nombre": "café" }
+  }
+}
+```
+**4.Eliminar documentos con precio bajo**
+
+Descripción: Elimina los que tengan precio menor a 40.
+
+POST /productos/_delete_by_query
+```json
+{
+  "query": {
+    "range": {
+      "precio": { "lt": 40 }
+    }
+  }
+}
+```
+
+**5. Eliminar usando Bulk**
+
+Descripción: Borra varios documentos en una sola operación.
+
+POST /productos/_bulk
+```json
+{"delete":{"_id":2}}
+{"delete":{"_id":3}}
+```
