@@ -73,18 +73,168 @@ En python se utilizó un codigo para poder pasar todo el dataset a ElasticSearch
     "Text": "I have bought several of the Vitality canned dog food products and have found them all to be of good quality..."
   }
 }
+```
 
 
 # Ejemplos de sentencias CRUD (Create, Read, Update, Delete)
-**Crear un documento con ID específico**
 
-##Create (Insertar documentos)
+## Create (Insertar documentos)
 
+**1.Crear un documento con ID específico**
+
+Descripción: Crea un documento nuevo en el índice productos con ID = 1.
+
+PUT/productos/_doc/1
 ```json
-PUT /productos/_doc/1
 {
   "nombre": "Café Latte",
   "precio": 50
 }
+```
+**2.Crea un documento sin especificar ID**
 
-Crea un documento nuevo en el índice productos con ID = 1.
+Descripción: Elasticsearch genera automáticamente un ID.
+
+POST/productos/_doc
+
+```json
+{
+  "nombre": "Té Verde",
+  "precio": 40
+}
+```
+**3.Crea un indice nuevo**
+
+Descripción: Crea un índice vacío llamado clientes.
+```json
+
+PUT /clientes
+
+```
+**4.Crear documento y actualizar si ya existe (upsert)**
+
+Descripción: Si el documento existe, lo actualiza; si no, lo crea.
+
+POST /inventario/_update/10
+```json
+{
+  "doc": { "stock": 20 },
+  "doc_as_upsert": true
+}
+```
+**5.Crear varios documentos al mismo tiempo (bulk)**
+
+Descripción: Inserta varios documentos en una sola operación.
+
+POST /productos/_bulk
+```json
+{"index":{}}
+{"nombre":"Café Americano","precio":35}
+{"index":{}}
+{"nombre":"Capuchino","precio":45}
+```
+## READ – Consultar documentos
+
+**1.Leer un documento por ID**
+
+Devuelve el documento con ID = 1.
+```json
+GET /productos/_doc/1
+```
+**2. Mostrar todos los documentos**
+
+Descripción: Retorna todos los documentos del índice productos.
+
+```json
+GET /productos/_search
+```
+**3.Busqueda por coincidencia**
+
+Descripción: Busca documentos que contengan la palabra café.
+
+GET /productos/_search
+
+```json
+{
+  "query": {
+    "match": { "nombre": "café" }
+  }
+}
+```
+**4.Filtrar por rango**
+
+Descripción: Muestra productos con precio mayor o igual a 40.
+
+GET /productos/_search
+```json
+{
+  "query": {
+    "range": {
+      "precio": { "gte": 40 }
+    }
+  }
+}
+```
+**5.Obtener los primeros 5 resultados**
+
+Descripción: Limita la consulta a solo 5 documentos
+```json
+GET /productos/_search?size=5
+```
+# UPDATE – Actualizar documentos
+
+**1. Actualizar un campo específico**
+
+Descripción: Cambia solo el campo precio del documento 1.
+
+POST /productos/_update/1
+```json
+{
+  "doc": { "precio": 55 }
+}
+```
+**2. Actualizar varios campos**
+
+Descripción: Modifica varios campos a la vez.
+
+POST /productos/_update/1
+```json
+{
+  "doc": {
+    "nombre": "Café Latte Grande",
+    "precio": 60
+  }
+}
+```
+**3. Incrementar un valor numérico**
+
+Descripción: Suma 5 al precio actual.
+
+POST /productos/_update/1
+```json
+{
+  "script": "ctx._source.precio += 5"
+}
+```
+**4. Añadir un campo nuevo**
+
+Descripción: Agrega un nuevo campo categoria
+
+POST /productos/_update/1
+```json
+{
+  "doc": { "categoria": "Bebidas" }
+}
+```
+**5. Reemplazar un documento completo**
+
+Descripción: Sustituye todo el documento por uno nuevo
+
+PUT /productos/_doc/1
+```json
+{
+  "nombre": "Café Mocha",
+  "precio": 70
+}
+```
+# DELETE – Eliminar documentos
