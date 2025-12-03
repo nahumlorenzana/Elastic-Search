@@ -314,3 +314,14 @@ POST /productos/_bulk
 {"delete":{"_id":2}}
 {"delete":{"_id":3}}
 ```
+
+## referencias 
+https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+
+https://www.elastic.co/guide/en/kibana/current/index.html
+
+https://www.elastic.co/guide/en/logstash/current/index.html
+
+https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews
+
+
