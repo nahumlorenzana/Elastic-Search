@@ -1,3 +1,29 @@
+<h1 align="center">🚀ElasticSearch</h1>
+<p align="center">
+  <strong>Proyecto Integrador</strong>  
+   
+   <strong>Modelado De Datos</strong>
+   
+   <strong>Universidad Autónoma de Yucatán</strong>
+
+   <strong>Realizado por:</strong>
+   
+<strong>Hendrick Nahum Lorenzana Rodriguez
+
+Josias Bernardo Mex Uitzil</strong>
+
+<strong>Profesor:
+
+Luis Ramiro Basto Díaz</strong>
+</p>
+<hr>
+
+
+
+
+
+
+
 Proyecto integrador
 # Proyecto NoSQL: Análisis de Amazon Fine Food Reviews con Elasticsearch
 
@@ -49,11 +75,11 @@ Cada fila del archivo CSV original se ha transformado en un único objeto JSON (
 **VS Code:** Herramienta para instalación de extensiones de comprobación.  
 **Postman Extension:** Extensión utilizada en VS Code para verificar que el archivo del dataset se haya importado correctamente.
 
-# Descripcion de proceso de importacion 
+# Descripción de proceso de importación 
 
-Para poder importar el dataset a ElasticSearch se necesito de un proceso largo, se instalo el paquete comprimido de ElasticSearch para Windows que se encuentra en el siguiente link: [InternetShortcut](https://www.elastic.co/downloads/elasticsearch), al descomprimir, se ejecutó en la terminal de PowerShell de Windows utilizando para su ejecución la siguiente sentencia:(bin\elasticsearch.bat).
+Para poder importar el dataset a ElasticSearch se necesito de un proceso largo, se instaló el paquete comprimido de ElasticSearch para Windows que se encuentra en el siguiente link: [InternetShortcut](https://www.elastic.co/downloads/elasticsearch), al descomprimir, se ejecutó en la terminal de PowerShell de Windows utilizando para su ejecución la siguiente sentencia:(bin\elasticsearch.bat).
 
-En python se utilizó un codigo para poder pasar todo el dataset a ElasticSearch  [importar.py](https://github.com/user-attachments/files/23866958/importar.py). Posteriormente se verificó en el navegador utilizando:  [InternetShortcut](http://localhost:9200/amazon_reviews).
+En python se utilizó un código para poder pasar todo el dataset a ElasticSearch  [importar.py](https://github.com/user-attachments/files/23866958/importar.py). Posteriormente se verificó en el navegador utilizando:  [InternetShortcut](http://localhost:9200/amazon_reviews).
 
 # Ejemplo.
 **Ejemplo de un documento en Elasticsearch:**
