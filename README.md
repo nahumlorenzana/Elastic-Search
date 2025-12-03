@@ -12,7 +12,7 @@ Este dataset consiste en reseñas de alimentos de alta cocina vendidas en Amazon
 
 La información es valiosa para realizar análisis de sentimientos, minería de texto y entender patrones de comportamiento de los consumidores mediante el análisis de los textos de las reseñas y sus puntuaciones.
 
-Diccionario de Datos
+# Diccionario de Datos
 A continuación se describen las columnas (campos) presentes en el dataset y su mapeo en Elasticsearch:
 
 | Campo (CSV) | Tipo de Dato (Elasticsearch) | Descripción |  
@@ -27,7 +27,7 @@ A continuación se describen las columnas (campos) presentes en el dataset y su 
 | `Summary` | `text` | Resumen breve o título de la reseña. |  
 | `Text` | `text` | Cuerpo completo de la reseña (texto no estructurado). |  
 
-## Modelado del Dataset (Base de Datos Documental).
+# Modelado del Dataset (Base de Datos Documental).
 **Tipo de NoSQL:** Documental (Document Store).
 
 En Elasticsearch, los datos no se almacenan en tablas con filas y columnas rígidas, sino como **Documentos JSON**.
@@ -41,7 +41,7 @@ Cada fila del archivo CSV original se ha transformado en un único objeto JSON (
     * Campos como `ProductId` o `UserId` se modelan como `keyword` para permitir filtrado exacto y agregaciones (e.g., "Top 10 productos más comentados").
     * Campos como `Text` se modelan como `text` para permitir análisis lingüístico.
 
-## Herramientas utilizadas.
+# Herramientas utilizadas.
 
 **Kaggle:** Plataforma utilizada para descargar el archivo original del dataset.  
 **ElasticSearch:** Motor de búsqueda y análisis de datos donde se almacenan y consultan los datos.  
@@ -49,13 +49,13 @@ Cada fila del archivo CSV original se ha transformado en un único objeto JSON (
 **VS Code:** Herramienta para instalación de extensiones de comprobación.  
 **Postman Extension:** Extensión utilizada en VS Code para verificar que el archivo del dataset se haya importado correctamente.
 
-## Descripcion de proceso de importacion 
+# Descripcion de proceso de importacion 
 
 Para poder importar el dataset a ElasticSearch se necesito de un proceso largo, se instalo el paquete comprimido de ElasticSearch para Windows que se encuentra en el siguiente link: [InternetShortcut](https://www.elastic.co/downloads/elasticsearch), al descomprimir, se ejercutó en la terminal de PowerShell de Windows utilizando ejecutando la siguiente sentencia:(bin\elasticsearch.bat).
 
 En python se utilizó un codigo para poder pasar todo el dataset a ElasticSearch  [importar.py](https://github.com/user-attachments/files/23866958/importar.py). Posteriormente se verifico en el navegador utilizando:  [InternetShortcut](http://localhost:9200/amazon_reviews).
 
-## Ejemplo.
+# Ejemplo.
 **Ejemplo de un documento en Elasticsearch:**
 ```json
 {
